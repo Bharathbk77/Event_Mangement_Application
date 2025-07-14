@@ -1,0 +1,129 @@
+/* Login Form Container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading Style */
+  .login-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label Styling */
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Input Field Styling */
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+  }
+  
+  /* Input Focus Styling */
+  .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    margin-top: 20px;
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .login-container h2 {
+      font-size: 20px;
+    }
+  
+    .form-group input, button {
+      font-size: 14px;
+    }
+  }
+  /* Styling for the heading or paragraph */
+p {
+    font-family: 'Arial', sans-serif; /* Use a clean and modern font */
+    font-size: 32px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the text */
+    color: black; /* Use a pleasant green color */
+    margin-top: 50px; /* Space above the text */
+    margin-bottom: 20px; /* Space below the text */
+    letter-spacing: 1px; /* Slight spacing between letters for clarity */
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    border: 2px solid;
+  }
+  
+  /* Hover effect on the text */
+  p {
+    color: white;
+    background-color: #007bff; /* Change color to blue on hover */
+    /* width: 50%; */
+    /* margin-left: 30%; */
+    border: 3px solid white;
+    border-style:dotted;
+    padding: 10px;
+    
+  }
+  
+  /* Responsive styling for smaller devices */
+  @media (max-width: 768px) {
+    p {
+      font-size: 24px; /* Adjust font size for smaller screens */
+      margin-top: 30px; /* Adjust margin */
+    }
+  }
+  

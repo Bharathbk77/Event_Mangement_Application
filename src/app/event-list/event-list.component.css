@@ -1,0 +1,154 @@
+/* Container for the event list */
+.event-list-container {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2c3e50; /* Dark blue-gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  height: 500px;  /* Set the height for vertical marquee */
+  overflow: hidden;  /* Hide the overflowing list items */
+}
+
+/* Title styling */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ecf0f1;  /* Light grey color for the title */
+}
+
+/* Vertical Marquee (Updated with blue theme) */
+.vertical-marquee {
+  position: relative;
+  height: 100%;  /* Take up full container height */
+  overflow: hidden;
+}
+
+.event-list-vertical {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;  /* Start from the bottom */
+  animation: scroll-bottom-top 10s linear infinite;  /* Animation for vertical scroll */
+}
+
+/* Styling for individual items in the vertical marquee */
+.event-item-vertical {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;  /* White text */
+  background-color: white; /* Blue background */
+  text-align: center;
+  border-bottom: 3px solid greenyellow;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect on event items */
+.event-item-vertical:hover {
+  transform: scale(1.05);
+  background-color: #128be7;  /* Darker blue on hover */
+  cursor: pointer;
+}
+
+/* Keyframe animation for scrolling vertically (bottom to top) */
+@keyframes scroll-bottom-top {
+  0% {
+    transform: translateY(100%);  /* Start from the bottom */
+  }
+  100% {
+    transform: translateY(-100%);  /* Scroll to the top */
+  }
+}
+
+/* Event Content - Formatting Name, Date, and Location */
+.event-name {
+  font-weight: 700;
+  color: #08bdea; /* Light grey color for event name */
+}
+
+/* Event Location Styling */
+.event-location {
+  color: #f39c12; /* Yellow color for location */
+  font-weight: bold;
+}
+
+/* Event Date Styling */
+.event-date {
+  color: #8e44ad;  /* Purple color for the date */
+  font-style: italic;
+}
+li{
+  border-radius: 5px;
+}
+h2{
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+}
+
+/* Back Text Styling */
+.back-text {
+  margin-right: 8px; /* Space between the text and the image */
+  font-size: 16px; /* Font size for the "Back" text */
+  color: #333; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s ease-in-out; /* Smooth text color transition */
+}
+
+/* Back Icon Styling */
+.back-icon {
+  width: 20px;  /* Set size for the back arrow */
+  height: 20px;
+  transition: transform 0.3s ease-in-out;  /* Smooth transform for hover effect */
+}
+
+/* Hover effect for back button */
+.back-button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Hover effect for the icon */
+.back-button:hover .back-icon {
+  transform: translateX(-5px); /* Move the icon slightly to the left */
+}
+
+/* Hover effect for the text */
+.back-button:hover .back-text {
+  color: #4CAF50; /* Change text color to green on hover */
+}
+
+/* No Events message styling */
+.no-events {
+  background-color: #f8d7da;  /* Light red background for emphasis */
+  color: #721c24;  /* Dark red text color */
+  border: 1px solid #f5c6cb;  /* Light border with the same red tone */
+  padding: 15px;
+  border-radius: 5px;  /* Rounded corners */
+  text-align: center;  /* Center the text */
+  font-size: 1.2rem;  /* Slightly larger font */
+  margin-top: 20px;  /* Space from the top */
+  width: 100%;
+  max-width: 600px;  /* Limit the width */
+  margin-left: auto;
+  margin-right: auto;  /* Center the message horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+.no-events p {
+  margin: 0;  /* Remove margin from the paragraph */
+  font-weight: bold;  /* Make the text bold */
+}
+.back-button{
+  border: 2px solid black;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}

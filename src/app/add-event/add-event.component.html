@@ -1,1 +1,154 @@
-<p>add-event works!</p>
+<!-- <p>add-event works!</p>
+<form  (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Event Name</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="eventForm.get('name')?.invalid && eventForm.get('name')?.touched">
+        Event name is required and must be at least 3 characters.
+      </div>
+    </div>
+    
+    <div>
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" />
+      <div *ngIf="eventForm.get('location')?.invalid && eventForm.get('location')?.touched">
+        Location is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="date">Date</label>
+      <input type="date" id="date" formControlName="date" />
+      <div *ngIf="eventForm.get('date')?.invalid && eventForm.get('date')?.touched">
+        Date is required and must be in the future.
+      </div>
+    </div>
+  
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched">
+        Description must be at least 10 characters.
+      </div>
+    </div>
+  
+    <button type="submit" >Add Event</button>
+  </form>
+  
+
+  -->
+<div id="main">
+  
+<!-- Back Button -->
+<button class="back-button" (click)="goBack()">
+  <span class="back-text" style="margin-right: 5px;">Back</span>
+  <img src="https://icon-library.com/images/back-arrow-icon-png/back-arrow-icon-png-25.jpg" alt="Back" class="back-icon"/>
+</button>
+
+<p class="title" style="color: white;">Create Event</p>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" style="background-color: beige;">
+  <div class="form-group">
+    <label for="id">Event ID</label>
+    <input id="id" formControlName="id" type="text" placeholder="Enter event ID" />
+
+    <label for="name">Event Name</label>
+    <input id="name" formControlName="name" type="text" placeholder="Enter event name" />
+    <div class="error" *ngIf="eventForm.get('name')?.invalid && eventForm.get('name')?.touched">
+      Event name is required and must be at least 3 characters.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input id="location" formControlName="location" type="text" placeholder="Enter location" />
+    <div class="error" *ngIf="eventForm.get('location')?.invalid && eventForm.get('location')?.touched">
+      Location is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input id="date" type="date" formControlName="date" />
+    <div class="error" *ngIf="eventForm.get('date')?.invalid && eventForm.get('date')?.touched">
+      Date is required and must be in the future.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" placeholder="Event description"></textarea>
+    <div class="error" *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched">
+      Description must be at least 10 characters.
+    </div>
+  </div>
+
+  <button type="submit" >Add Event</button>
+</form>
+
+
+
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white py-4">
+  <!-- Footer Content -->
+   <!-- Add Testimonials Section Here -->
+<div class="container my-5">
+  <h2 class="text-center">What People Are Saying</h2>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card">
+              <div class="card-body">
+                  <p class="card-text">"The events here are always well-organized and informative. I look forward to attending more."</p>
+                  <footer class="blockquote-footer">Shanthan, Student</footer>
+                  <!-- Star Rating -->
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span> <!-- Empty star -->
+                    <small>4 out of 5 stars</small>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <div class="card-body">
+                  <p class="card-text">"I had a great time at the recent workshop. It was very engaging and helpful."</p>
+                  <footer class="blockquote-footer">Suresh babu, Faculty</footer>
+                  <!-- Star Rating -->
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="star">&#9734;</span> <!-- Empty star -->
+                    <small>3 out of 5 stars</small>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+              <div class="card-body">
+                  <p class="card-text">"This platform made it so easy to stay updated on upcoming events!"</p>
+                  <footer class="blockquote-footer">Haritha, Event Organizer</footer>
+                  <!-- Star Rating -->
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span> <!-- Empty star -->
+                    <small>5 out of 5 stars</small>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+</footer>

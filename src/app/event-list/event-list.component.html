@@ -1,1 +1,24 @@
-<p>event-list works!</p>
+<button class="back-button" (click)="goBack()">
+    <span class="back-text">Back</span>
+    <img src="https://icon-library.com/images/back-arrow-icon-png/back-arrow-icon-png-25.jpg" alt="Back" class="back-icon"/>
+  </button>
+
+<div class="event-list-container">
+    <h2 class="title">Upcoming Events</h2>
+  
+    <!-- Vertical Marquee (Updated to show events in vertical scroll) -->
+    <div class="vertical-marquee">
+      <ul class="event-list-vertical">
+        <li *ngFor="let event of events" class="event-item-vertical"  (click)="goToEventDetail(event.id)">
+          <span class="event-name">{{ event.name }}</span>  |
+          <span class="event-location">{{ event.location }}</span>  |
+          <span class="event-date">{{ event.date | date:'shortDate' }}</span>
+        </li>
+      </ul>
+      <!-- Show message if no events are available -->
+        <div *ngIf="events.length === 0" class="no-events">
+            <p>No events available at the moment.</p>
+        </div>
+    </div>
+  </div>
+  

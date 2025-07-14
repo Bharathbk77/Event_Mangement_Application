@@ -1,0 +1,219 @@
+/* Global Page Layout */
+.page-container {
+  background-color: #f4f6f9; /* Light background for the entire page */
+  padding: 30px 15px; /* Padding around the page */
+  min-height: 100vh; /* Ensure the page takes up full height */
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.5rem; /* Larger font for the title */
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Dark text color */
+  margin-bottom: 40px; /* Space below the title */
+  text-transform: uppercase;
+}
+
+/* Layout for the Event Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.card-header {
+  background-color: #f8f9fa; /* Light gray background for the header */
+  text-align: center;
+  padding: 15px 10px;
+}
+
+.card-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 15px;
+  background-color: white; /* White background inside the card */
+  color: #333;
+}
+
+.card-body h5 {
+  font-size: 1.1rem;
+  color: #4CAF50; /* Green color for location */
+}
+
+/* Styling for the Button */
+.card-body button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  display: inline-block; /* Ensure they don't stack vertically */
+  margin-right: 10px; /* Space between buttons */
+}
+
+/* Customize button colors directly */
+.card-body button.btn-success {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+}
+
+.card-body button.btn-success:hover {
+  background-color: #45a049; /* Darker green for hover */
+}
+
+.card-body button.btn-primary {
+  background-color: #007bff; /* Blue color */
+  color: white;
+}
+
+.card-body button.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue for hover */
+}
+
+/* Button Disabled State */
+.card-body button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Styling for Event Details Section */
+.card-body p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Add shadow to the cards for a more modern look */
+.card.shadow-sm {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+  }
+}
+
+/* Back Button Styling (Right Top Corner, No Background) */
+.back-button {
+  position: absolute; /* Position it absolutely */
+  top: 10px;          /* 10px from the top of the page */
+  right: 10px;        /* 10px from the right of the page */
+  background-color: transparent; /* No background */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px;  /* Font size */
+  z-index: 1000;    /* Ensure it's above other content */
+  display: flex;     /* Use flexbox to align the text and icon */
+  align-items: center;  /* Vertically align the text and icon */
+  padding: 8px 12px; /* Add some padding to the button */
+  transition: transform 0.3s ease-in-out; /* Smooth effect on hover */
+}
+
+/* Back Text Styling */
+.back-text {
+  margin-right: 8px; /* Space between the text and the image */
+  font-size: 16px; /* Font size for the "Back" text */
+  color: #333; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s ease-in-out; /* Smooth text color transition */
+}
+
+/* Back Icon Styling */
+.back-icon {
+  width: 20px;  /* Set size for the back arrow */
+  height: 20px;
+  transition: transform 0.3s ease-in-out;  /* Smooth transform for hover effect */
+}
+
+/* Hover effect for back button */
+.back-button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Hover effect for the icon */
+.back-button:hover .back-icon {
+  transform: translateX(-5px); /* Move the icon slightly to the left */
+}
+
+/* Hover effect for the text */
+.back-button:hover .back-text {
+  color:black; /* Change text color to green on hover */
+}
+
+/* Style for No Events Available message */
+.no-events {
+  background-color: #f8d7da;  /* Light red background for emphasis */
+  color: #721c24;  /* Dark red text color */
+  border: 1px solid #f5c6cb;  /* Light border with the same red tone */
+  padding: 15px;
+  border-radius: 5px;  /* Rounded corners */
+  text-align: center;  /* Center the text */
+  font-size: 1.2rem;  /* Slightly larger font */
+  margin-top: 20px;  /* Space from the top */
+  width: 100%;
+  max-width: 600px;  /* Limit the width */
+  margin-left: auto;
+  margin-right: auto;  /* Center the message horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+.no-events p {
+  margin: 0;  /* Remove margin from the paragraph */
+  font-weight: bold;  /* Make the text bold */
+}
+
+.no-events a {
+  color: #155724;  /* Green color for links (optional) */
+  text-decoration: underline;
+}
+.back-button{
+  border: 2px solid black;
+  border-radius: 5px;
+  background: color #bdc3c7;;
+  color: black;
+}
+.back-button:hover{
+  color: black;
+}
+.highlight-event{
+  background-color: #f0f8ff;  /* Light blue background for the highlighted card */
+  border: 5px solid #007bff;  /* Blue border for the highlighted card */
+}
+
+.search-container{
+ /* border: 2px solid; */
+ width: 30%;
+ margin: 20px;
+ margin-left: 35%;
+}
+.search-container input{
+  margin: 5px;
+}
+.search-container button{
+  margin: 10px;
+  margin-left: 85%;
+}

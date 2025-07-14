@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "name": "Music Festival 2024",
+      "location": "VJIT Auditorium, Hyderabad",
+      "date": "2024-11-18",
+      "description": "Join us for an unforgettable musical experience with performances from top artists. This year features rock, classical, and electronic music genres.\n",
+      "showDetails": false
+    },
+    {
+      "id": "2",
+      "name": "Food Festival",
+      "location": "Indira Gandhi Stadium, New Delhidhewqohdoiw",
+      "date": "2024-12-26",
+      "description": "Savor a variety of cuisines from across the world. Special food trucks, live cooking stations, and more!\"",
+      "showDetails": false
+    },
+    {
+      "id": "3",
+      "name": "Sports Event 2025",
+      "location": "Jawaharlal Nehru Technology ,Hyderabad",
+      "date": "2025-01-22",
+      "description": "Catch the excitement of national sports teams competing for the championship in multiple events.",
+      "showDetails": false
+    },
+    {
+      "id": "4",
+      "name": "Film Festival 2024",
+      "location": "Ramoji Film City , Hyderabad",
+      "date": "2024-11-15",
+      "description": "A celebration of international cinema with screenings, awards, and panels featuring filmmakers and critics. ",
+      "showDetails": false
+    },
+    {
+      "id": "5",
+      "name": "Bathukamma Festival ",
+      "location": "Nalgonda",
+      "date": "2025-10-22",
+      "description": "Celebrate the vibrant and beautiful Bathukamma festival in the heart of Telangana. A floral festival dedicated to Goddess Gauri, filled with colorful flower stacks, traditional songs, and joyful dances.",
+      "showDetails": false
+    }
+  ]
+}

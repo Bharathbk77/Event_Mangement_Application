@@ -1,0 +1,351 @@
+/* Navbar Base Styles */
+.navbar {
+  background-color: #343a40; /* Dark background */
+  font-family: 'Arial', sans-serif; /* Clean and modern font */
+  padding: 0.8rem 1.5rem; /* Add some padding for spacing */
+}
+/* Styling the logo container */
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Vertically center the logo */
+  color: #fff; /* White text color */
+  font-size: 24px; /* Font size for the brand name */
+  font-weight: bold; /* Bold text */
+  text-decoration: none; /* Remove underline from the link */
+  margin-right: 20px; /* Space between the logo and other navbar items */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Logo image styling */
+.navbar-brand img {
+  height: 40px; /* Adjust the height of the logo */
+  width: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+/* Hover effect for logo (when hovering over the brand) */
+.navbar-brand:hover {
+  color: #007bff; /* Change color on hover (blue) */
+}
+
+/* Additional responsiveness: logo resizing on smaller screens */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 18px; /* Smaller font size for smaller screens */
+  }
+
+  .navbar-brand img {
+    height: 30px; /* Smaller logo on mobile devices */
+  }
+}
+
+.nav-item a{
+  /* border: 2px solid white; */
+  border-radius: 5px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+.nav-item a:hover{
+  background-color: whitesmoke
+}
+/* Navbar Brand (Logo) */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #ff7f50; /* Subtle orange color on hover */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-item .nav-link {
+  color: #fff; /* Default text color */
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Navbar Item Active Link */
+.navbar-nav .nav-item .nav-link.active {
+  color: #ff7f50; /* Highlight active link with an orange color */
+  font-weight: bold;
+}
+
+/* Navbar Link Hover Effects */
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ff7f50; /* Change text color on hover */
+  transform: translateY(-2px); /* Slight upward movement for hover effect */
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  border-color: #fff; /* White border for the toggle button */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* White icon */
+}
+
+/* Responsive Navbar */
+@media (max-width: 991px) {
+  .navbar-nav {
+      text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+      margin-top: 1rem;
+  }
+
+  .navbar-collapse {
+      background-color: #343a40; /* Dark background for collapsed menu */
+  }
+}
+
+/* Add a slight shadow for a floating effect */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Container for the event list */
+.event-list-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2c3e50; /* Dark blue-gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: 160px;  /* Increased height to give more space for event names */
+    overflow: hidden;  /* Hide any overflow from scrolling items */
+    position: relative;  /* Position relative for smooth scrolling */
+    border: 3px solid #fff;  /* Optional: white border for the container */
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ecf0f1;  /* Light grey color for the title */
+  }
+  
+  /* Horizontal Marquee */
+  .horizontal-marquee {
+    position: relative;
+    height: 100%;  /* Ensure it takes the full height of the container */
+    overflow: hidden;  /* Hide any overflow from scrolling items */
+  }
+  
+  .event-list-horizontal {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    animation: scroll-right-left 15s linear infinite;  /* Animation for horizontal scroll */
+    align-items: center; /* Vertically center the text */
+  }
+  
+  .event-item-horizontal {
+    padding: 10px 20px;  /* Reduced padding for better fit */
+    font-size: 18px;  /* Adjust font size */
+    font-weight: bold;
+    color: #ffffff;  /* White text */
+    background-color: #3498db;  /* Light blue background */
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    height: 100%; /* Ensure each item takes full height of the container */
+  }
+  
+  /* Hover effect on event items */
+  .event-item-horizontal:hover {
+    transform: scale(1.05);
+    background-color: #128be7;  /* Darker blue on hover */
+    cursor: pointer;
+  }
+  
+  /* Keyframe animation for scrolling horizontally (right to left) */
+  @keyframes scroll-right-left {
+    0% {
+      transform: translateX(100%);  /* Start from the right edge */
+    }
+    100% {
+      transform: translateX(-100%);  /* Move to the left edge (scroll out of view) */
+    }
+  }
+  
+  /* Event Content - Formatting Name, Date, and Location */
+  .event-name {
+    font-weight: 700;
+    color: #08bdea; /* Light blue color for event name */
+  }
+  
+  /* Event Location Styling */
+  .event-location {
+    color: #f39c12; /* Yellow color for location */
+    font-weight: bold;
+  }
+  
+  /* Event Date Styling */
+  .event-date {
+    color: #8e44ad;  /* Purple color for the date */
+    font-style: italic;
+  }
+  
+  li {
+    border-radius: 5px;
+  }
+  
+  h2 {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+  }
+  .event-list-horizontal li{
+    background-color: white;
+  }
+  .no-events-item {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #e74c3c;  /* Red background to highlight the message */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    margin-right: 20px;
+    height: 100%;
+  }
+  
+  /* "No events" message outside the marquee */
+  .no-events-message {
+    color: #e74c3c;  /* Red text to show message in the container */
+    font-size: 20px;
+    font-weight: bold;
+  }
+    
+
+  /* Footer Section Styles */
+.footer {
+  background-color: #343a40;  /* Dark background */
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.social-media-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media-links li a {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Colors for social media icons */
+.social-media-links li a {
+  color: #ffffff;  /* Default icon color (white) */
+}
+
+.social-media-links li a:hover {
+  color: #ff7f50;  /* Orange color on hover */
+}
+
+/* Custom icon colors for each platform */
+.social-media-links li a.facebook {
+  color: #3b5998;  /* Facebook blue */
+}
+
+.social-media-links li a.twitter {
+  color: #1DA1F2;  /* Twitter blue */
+}
+
+.social-media-links li a.instagram {
+  color: #E4405F;  /* Instagram pinkish-red */
+}
+
+.social-media-links li a.linkedin {
+  color: #0077B5;  /* LinkedIn blue */
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 768px) {
+  .footer .container {
+      text-align: center;
+  }
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+  .social-media-links {
+      margin-top: 1rem;
+  }
+}
+/* Social Media Icon Image Styles */
+.social-media-links li a img {
+  width: 30px; /* Set the width to 30px, adjust as needed */
+  height: 30px; /* Set the height to 30px, maintain aspect ratio */
+  object-fit: contain; /* Ensure the image does not stretch, but maintains aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Optional: Enlarge image on hover */
+.social-media-links li a:hover img {
+  transform: scale(1.1); /* Slight zoom effect when hovered */
+}
+
+/* Optional: Adding spacing between the icons */
+.social-media-links li {
+  margin-right: 15px; /* Space between icons */
+}
+/* Adjust the carousel's sliding speed */
+.carousel-item {
+  transition: transform 0.3s ease-in-out; /* Faster transition duration (0.3s) */
+}
+
+/* If you're using a fade effect, adjust the fading speed */
+.carousel-fade .carousel-item {
+  transition: opacity 0.3s ease-in-out; /* Fade transition speed (0.3s) */
+}
+
+/* Optional: Adjust the size of the carousel images for better appearance */
+.carousel-inner img {
+  object-fit: cover;
+  height: 85vh; /* Adjust image height */
+}
+.carousel-item img{
+  padding: 30px;
+}
+#signup{
+  border: 2px solid;
+   margin-top: 0%;
+    background-color: rgb(16, 156, 243);
+    padding: 30px;
+    border-radius: 5px;
+}
+.event-name{
+  color: #007bff;
+}

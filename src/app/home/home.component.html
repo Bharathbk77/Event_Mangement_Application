@@ -1,0 +1,165 @@
+<nav class="navbar navbar-expand-lg " data-bs-theme="dark" style="background-color: rgb(15, 131, 240);">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home"><img src="https://as2.ftcdn.net/v2/jpg/06/09/89/75/1000_F_609897591_H4t37FrI4PCq4r3N1DxhE0dMjzbEPJSB.jpg" alt="">VJIT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add-event">Add Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/event-list">Event list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/event-details/:id"> Event details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- home.component.html -->
+<div class="home-container">
+  <button (click)="logout()" class="btn btn-danger">Logout</button>
+
+</div>
+
+  </nav>
+  <!-- <router-outlet></router-outlet> -->
+
+<!-- Horizontal Marquee Section -->
+<div class="event-list-container" style="background-color: purple; margin-top: 0%;">
+    <h2 class="title">Upcoming Events</h2>
+
+   <!-- Horizontal Marquee (Updated to show events in horizontal scroll) -->
+   <div class="horizontal-marquee">
+    <ul class="event-list-horizontal">
+        
+      <!-- Check if there are events, if not show a message in the marquee -->
+      <li *ngIf="events.length === 0" class="no-events-item">
+        <span class="event-name">No events available at the moment.</span>
+      </li>
+        
+      <li *ngFor="let event of events" class="event-item-horizontal">
+        <span class="event-name">{{ event.name }}</span> |
+        <span class="event-date">{{ event.date | date:'shortDate' }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  <!-- Event Cards Section -->
+  <div class="container">
+    <div class="row">
+      <!-- Add Event Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" class="card-img-top" alt="Add Event">
+          <div class="card-body">
+            <h5 class="card-title">Add New Event</h5>
+            <p class="card-text">Create and manage events for your college.</p>
+            <a routerLink="/add-event" class="btn btn-primary">Add Event</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event List Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://cdn.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg" class="card-img-top" alt="Event List">
+          <div class="card-body">
+            <h5 class="card-title">View Event List</h5>
+            <p class="card-text">Browse the list of all events happening in your college.</p>
+            <a routerLink="/event-list" class="btn btn-success">View Events</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Details Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="card-img-top" alt="Event Details">
+          <div class="card-body">
+            <h5 class="card-title">Event Details</h5>
+            <p class="card-text">Learn more about upcoming events and their details.</p>
+            <a routerLink="/event-details/:id" class="btn btn-info">Event Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+<!-- Newsletter Signup Section -->
+<div class="container my-5" id="signup" >
+  <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+          <h2>Stay Updated!</h2>
+          <p>Sign up for our newsletter and never miss an event.</p>
+          <form action="#" method="post" class="d-flex">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn-primary ms-2">Subscribe</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+<!-- carousel  -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://cdn.pixabay.com/photo/2018/05/10/11/34/concert-3387324_1280.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn.pixabay.com/photo/2017/09/08/00/38/friend-2727307_1280.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn.pixabay.com/photo/2023/06/13/07/36/woman-8060193_1280.jpg " class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  <!-- Footer Section -->
+<footer class="footer bg-dark text-white py-4">
+  <div class="container">
+      <div class="row">
+          <!-- Social Media Links -->
+          <div class="col-md-6">
+              <h5>Follow Us</h5>
+              <ul class="social-media-links list-unstyled d-flex">
+                  <li><a href="https://www.facebook.com" target="_blank" class="text-white mx-3"><i class="fab fa-facebook-f"></i> <img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746_1280.png" alt=""></a></li>
+                  <li><a href="https://www.twitter.com" target="_blank" class="text-white mx-3"><i class="fab fa-twitter"></i><img src="https://cdn.pixabay.com/photo/2015/03/10/17/30/twitter-667462_1280.png" alt=""></a></li>
+                  <li><a href="https://www.instagram.com" target="_blank" class="text-white mx-3"><i class="fab fa-instagram"></i><img src="https://cdn.pixabay.com/photo/2018/11/13/22/01/instagram-3814080_1280.png" alt=""></a></li>
+              </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-6 text-md-end">
+              <h5>Contact Us</h5>
+              <p>Email: bobbali&#64;gmail.com</p>
+              <p>Phone: +91 9014635274</p>
+          </div>
+      </div>
+      <div class="text-center mt-3">
+          <p>&copy; 2024 VJIT. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>

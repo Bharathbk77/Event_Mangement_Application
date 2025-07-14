@@ -1,1 +1,121 @@
-<p>event-detail works!</p>
+<div class="page-container">
+    
+    <!-- Back Button -->
+    <button class="back-button" (click)="goBack()">
+      <span class="back-text">Back</span>
+      <img src="https://icon-library.com/images/back-arrow-icon-png/back-arrow-icon-png-25.jpg" alt="Back" class="back-icon"/>
+    </button>
+  
+    <h2 class="page-title">Event Details</h2>
+  
+    <!-- Show message if no events are available -->
+    <div *ngIf="events.length === 0" class="no-events">
+      <p>No events available at the moment.</p>
+    </div>
+  
+    <!-- Event Cards Displayed in a Grid Layout -->
+    <div class="card-container row" *ngIf="events.length > 0">
+      <!-- Loop through all events and display each in a card -->
+      <div *ngFor="let event of events" class="col-md-4 mb-4">
+        <div class="card shadow-sm" style="border-radius: 10px;" [ngClass]="{ 'highlight-event': event.id === searchResult?.id }">
+          <div class="card-header text-center">
+            <h4>{{ event.name }}</h4>
+            <p><strong>{{ event.date | date: 'fullDate' }}</strong></p>
+          </div>
+          <div class="card-body">
+            <h5>Event Id :{{ event.id }}  </h5>
+            <h4>Welcome to {{ event.name }}  </h4>
+            <h5 class="card-title">Location: {{ event.location }}</h5>
+
+            
+  
+            <!-- Show expanded details if 'showDetails' is true -->
+            <div *ngIf="event.showDetails">
+              <p><strong>Event ID:</strong> {{ event.id }}</p>
+              <p><strong>Description:</strong>{{ event.description }}</p>
+
+              <!-- Event Programs -->
+            <ul>
+              <li><strong>Event Programs:</strong></li>
+              <li><strong>Opening Ceremony</strong>: 10:00 AM</li>
+              <li><strong>Live Band Performance - Rock</strong>: 11:30 AM</li>
+              <li><strong>Classical Dance Performance</strong>: 1:00 PM</li>
+              <li><strong>Lunch Break</strong>: 2:30 PM</li>
+              <li><strong>Electronic Music DJ Set</strong>: 4:00 PM</li>
+              <li><strong>Closing Ceremony</strong>: 7:00 PM</li>
+            </ul>
+
+            <!-- Event Timings -->
+            <ul>
+              <li><strong>Event Timings:</strong></li>
+              <li><strong>Registration</strong>: 9:00 AM - 10:00 AM</li>
+              <li><strong>Event Start</strong>: 10:00 AM</li>
+              <li><strong>Event End</strong>: 8:00 PM</li>
+            </ul>
+
+            <!-- Food Options -->
+            <ul>
+              <li><strong>Food Options:</strong></li>
+              <li>Various food stalls will be available offering snacks, meals, and beverages.</li>
+              <li>Special dietary options: Vegetarian, Vegan, and Gluten-Free.</li>
+            </ul>
+
+            <!-- Ticket Information -->
+            <ul>
+              <li><strong>Ticket Information:</strong></li>
+              <li><strong>Price</strong>: ₹499</li>
+              <li><strong>Early Bird Discount</strong>: 10% off for the first 100 tickets! (Hurry, limited availability!)</li>
+              <li><strong>Booking Link</strong>: <a href="https://www.eventbookingpage.com/music-festival-2024" target="_blank">Book Your Tickets Here</a></li>
+            </ul>
+            </div>
+  
+            <!-- Show 'View Details' button to toggle the expanded details -->
+            <button class="btn btn-primary" (click)="toggleDetails(event.id)" style="margin-top: 10px;  width: 100%;" >
+              {{ event.showDetails ? 'Hide Details' : 'View Details' }}
+            </button>
+  
+            <!-- Edit Event Button -->
+        <button class="btn btn-warning" (click)="editEvent(event.id)" style="margin-top: 10px;  width: 45%; margin-left: 10px;">Edit</button>
+        
+
+            <!-- Delete Event Button -->
+            <button class="btn btn-danger" (click)="deleteEvent(event.id)" style="margin-top: 10px; width: 45%; margin-left: 10px;">
+              Delete Event
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Event Edit Form (only shown if editing an event) -->
+  <div *ngIf="editedEvent" class="edit-form">
+    <h3>Edit Event</h3>
+    <form (ngSubmit)="saveEvent()">
+      <div class="form-group">
+        <label for="name">Event Name</label>
+        <input type="text" id="name" [(ngModel)]="editedEvent.name" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Event Date</label>
+        <input type="date" id="date" [(ngModel)]="editedEvent.date" name="date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" [(ngModel)]="editedEvent.location" name="location" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" [(ngModel)]="editedEvent.description" name="description" class="form-control" rows="4" required></textarea>
+      </div>
+
+      <!-- Buttons for Save and Cancel -->
+      <button type="submit" class="btn btn-success" style="margin-top: 10px; margin-right: 20px;">Save Changes</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelEdit()" style="margin-top: 10px;">Cancel</button>
+    </form>
+  </div>
+  </div>
+  
+  <div class="search-container">
+    <input type="text" id="search" [(ngModel)]="searchId" class="form-control" placeholder="Search by Event ID " />
+    <button (click)="searchEvent()" class="btn btn-primary" style="margin-top: 10px;">Search</button>
+  </div>
